@@ -12,7 +12,7 @@ st.set_page_config(
 
 st.title("Draw Me A Picture!")
 
-canvas_result = st_canvas(background_color="rgba(129,168,141,1.000)",
+canvas_result = st_canvas(
                           fill_color="rgba(129,168,141,1.000)",
                           update_streamlit=realtime_update,
                           stroke_color=stroke_color,

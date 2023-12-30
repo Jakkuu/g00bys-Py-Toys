@@ -14,7 +14,7 @@ st.title("Draw Me A Picture!")
 
 canvas_result = st_canvas(background_color="rgba(129,168,141,1.000)",
                           fill_color="rgba(129,168,141,1.000)",
-                          height=900,
+                          height=700,
                           width=1418)
 
 

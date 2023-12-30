@@ -39,7 +39,7 @@ def get_binary_file_downloader_html(file_path, file_label):
     with open(file_path, 'rb') as f:
         data = f.read()
     bin_str = base64.b64encode(data).decode()
-    href = f'- > <a href="data:file/png;base64,{bin_str}" download="{file_label}.png">Download Image</a> < -'
+    href = f'-> <a href="data:file/png;base64,{bin_str}" download="{file_label}.png">Download Image</a> <-'
     return href
 
 

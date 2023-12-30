@@ -4,7 +4,7 @@ import base64
 from streamlit_drawable_canvas import st_canvas
 
 st.set_page_config(
-    page_title="Draw Me A Picture!",
+    page_title="Draw/Send Picture!",
     page_icon="✏",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -22,6 +22,8 @@ bg_color = st.color_picker("Background color hex: ", '#81a88d')
 
 realtime_update = st.checkbox("Update in realtime", True)
 
+st.title("Canvas:")
+
 canvas_result = st_canvas(fill_color="rgba(129,168,141,1.000)",
                           update_streamlit=realtime_update,
                           stroke_color=stroke_color,
@@ -37,7 +39,7 @@ def get_binary_file_downloader_html(file_path, file_label):
     with open(file_path, 'rb') as f:
         data = f.read()
     bin_str = base64.b64encode(data).decode()
-    href = f'<a href="data:file/png;base64,{bin_str}" download="{file_label}.png">Download Image</a>'
+    href = f'- > <a href="data:file/png;base64,{bin_str}" download="{file_label}.png">Download Image</a> < -'
     return href
 
 
@@ -48,11 +50,11 @@ if st.button("Download Image"):
 
     # Save the PIL Image to a temporary file
     temp_file_path = "drawn_image.png"
-    watermark_text = "g00bys Py Toys - Made On Streamlit"
+    watermark_text = "Drawing Made With - g00bys-py-toys.streamlit.app/"
     draw = ImageDraw.Draw(pil_image)
 
     # Specify a small font size for the watermark
-    font_size = 35
+    font_size = 30
     font_color = "#d3d4d8"
     font = ImageFont.load_default()  # You can use any font file path or the default font
     text_width, text_height = draw.textsize(watermark_text, font)
@@ -62,7 +64,7 @@ if st.button("Download Image"):
     pil_image.save(temp_file_path,  dpi=(600, 600))
 
     # Provide a download link
-    st.markdown(get_binary_file_downloader_html(temp_file_path, 'Draw_g00by_A_Picture'), unsafe_allow_html=True)
+    st.markdown(get_binary_file_downloader_html(temp_file_path, 'Draw-g00by-A-Picture'), unsafe_allow_html=True)
 
 st.markdown("""
     <style>

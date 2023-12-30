@@ -14,8 +14,14 @@ st.title("Draw Me A Picture!")
 
 canvas_result = st_canvas(background_color="rgba(129,168,141,1.000)",
                           fill_color="rgba(129,168,141,1.000)",
+                          update_streamlit=realtime_update,
+                          stroke_color=stroke_color,
+                          background_color=bg_color,
+                          drawing_mode=drawing_mode,
+                          point_display_radius=point_display_radius if drawing_mode == 'point' else 0,
+                          key="canvas",
                           height=600,
-                          width=1418)
+                          width=1418,)
 
 drawing_mode = st.selectbox("Drawing tool:", ("point", "freedraw", "line", "rect", "circle", "transform"))
 

@@ -17,6 +17,17 @@ canvas_result = st_canvas(background_color="rgba(129,168,141,1.000)",
                           height=600,
                           width=1418)
 
+drawing_mode = st.selectbox("Drawing tool:", ("point", "freedraw", "line", "rect", "circle", "transform"))
+
+stroke_width = st.slider("Stroke width: ", 1, 25, 3)
+if drawing_mode == 'point':
+    point_display_radius = st.slider("Point display radius: ", 1, 25, 3)
+stroke_color = st.color_picker("Stroke color hex: ")
+bg_color = st.color_picker("Background color hex: ", "#eee")
+bg_image = st.file_uploader("Background image:", type=["png", "jpg"])
+
+realtime_update = st.checkbox("Update in realtime", True)
+
 
 def get_binary_file_downloader_html(file_path, file_label):
     with open(file_path, 'rb') as f:
@@ -24,17 +35,6 @@ def get_binary_file_downloader_html(file_path, file_label):
     bin_str = base64.b64encode(data).decode()
     href = f'<a href="data:file/png;base64,{bin_str}" download="{file_label}.png">Download Image</a>'
     return href
-
-    drawing_mode = st.selectbox("Drawing tool:", ("point", "freedraw", "line", "rect", "circle", "transform"))
-    
-    stroke_width = st.slider("Stroke width: ", 1, 25, 3)
-    if drawing_mode == 'point':
-        point_display_radius = st.slider("Point display radius: ", 1, 25, 3)
-    stroke_color = st.color_picker("Stroke color hex: ")
-    bg_color = st.color_picker("Background color hex: ", "#eee")
-    bg_image = st.file_uploader("Background image:", type=["png", "jpg"])
-    
-    realtime_update = st.checkbox("Update in realtime", True)
 
 
 # Add a download button

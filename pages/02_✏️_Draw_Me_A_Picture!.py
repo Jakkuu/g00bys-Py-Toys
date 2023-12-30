@@ -39,7 +39,7 @@ if st.button("Download Image"):
     # Specify a small font size for the watermark
     font_size = 35
     font_color = "#d3d4d8"
-    font = ImageFont.truetype("arial.ttf", font_size)  # You can use any font file path or the default font
+    font = ImageFont.load_default()  # You can use any font file path or the default font
     text_width, text_height = draw.textsize(watermark_text, font)
     margin = 10  # Adjust the margin as needed
     draw.text((pil_image.width - text_width - margin, pil_image.height - text_height - margin), watermark_text,

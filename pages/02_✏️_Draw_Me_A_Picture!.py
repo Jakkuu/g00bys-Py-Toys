@@ -14,9 +14,9 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-gbypytoys_em = st.secrets[email-connect][emailvar]
-gbypytoys_em2 = st.secrets[email-connect][emailvar2]
-pss = st.secrets[email-connect][pssvar]
+gbypytoys_em = st.secrets.emailvar
+gbypytoys_em2 = st.secrets.emailvar2
+pss = st.secrets.pssvar
 
 st.title(":rainbow[Draw Settings]:")
 

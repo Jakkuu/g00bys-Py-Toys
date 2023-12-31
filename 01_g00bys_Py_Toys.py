@@ -18,11 +18,11 @@ def main():
     st.markdown("""
         <style>
         [data-testid=stButton] > button {
-        background-color: #81A88D;
+        background-color: #7bc74a;
         color:#ffffff;
         }
         [data-testid=stAppViewContainer]{
-        background-color: #81A88D;
+        background-color: #7bc74a;
         }
         [data-testid=stHeader]{
         background-color: #81A88D;

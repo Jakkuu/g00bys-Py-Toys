@@ -32,7 +32,7 @@ realtime_update = st.checkbox("Update in realtime", True)
 
 st.title("Canvas:")
 
-canvas_result = st_canvas(fill_color="rgba(129,168,141,1.000)",
+canvas_result = st_canvas(fill_color="rgba(255, 0, 0, 0)",
                           update_streamlit=realtime_update,
                           stroke_color=stroke_color,
                           background_color=bg_color,
@@ -76,7 +76,7 @@ if st.button("Download Image"):
 
 
 
-if st.button("Send via Email"):
+if st.button("Send Drawing To g00by via Email"):
     pil_image = Image.fromarray(canvas_result.image_data)
 
     # Save the PIL Image to a temporary file
@@ -117,7 +117,7 @@ if st.button("Send via Email"):
         server.login(sender_email, pss)
         server.sendmail(sender_email, receiver_email, msg.as_string())
 
-    st.success("Drawing sent successfully via email!")
+    st.success("Drawing sent successfully to g00by via Email!")
 
 st.markdown("""
     <style>

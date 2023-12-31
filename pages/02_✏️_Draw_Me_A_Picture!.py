@@ -132,7 +132,7 @@ st.markdown("""
     background-color: #81A88D;
     }
     [data-testid=stSidebar] {
-    background-color: #D3D4D8;
+    background-color: #232428;
     }
     [data-testid=stButton] > button:hover {
     background-color: #A2A475;

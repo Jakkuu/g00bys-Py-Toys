@@ -2,7 +2,7 @@ import streamlit as st
 from streamlit_extras.app_logo import add_logo
 
 st.set_page_config(
-    page_title="g00bys-Py-Toys!",
+    page_title="g00bys Py Toys",
     page_icon="🐸",
     layout="wide",
     initial_sidebar_state="expanded"

@@ -7,9 +7,9 @@ from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 from streamlit_drawable_canvas import st_canvas
 
-gbypytoys_em = st.secrets[email-connect][emailvar][1]
-gbypytoys_em2 = st.secrets[email-connect][emailvar][0]
-pss = st.secrets[email-connect][pssvar][0]
+gbypytoys_em = st.secrets[email-connect]emailvar[1]
+gbypytoys_em2 = st.secrets[email-connect]emailvar[0]
+pss = st.secrets[email-connect]pssvar[0]
 
 st.set_page_config(
     page_title="Draw/Send Picture!",

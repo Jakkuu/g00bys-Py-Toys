@@ -125,25 +125,25 @@ if st.button("Send Drawing To g00by via Email"):
 st.markdown("""
     <style>
     [data-testid=stButton] > button {
-    background-color: #81A88D;
+    background-color: #7bc74a;
     color:#ffffff;
     }
     [data-testid=stAppViewContainer]{
-    background-color: #81A88D;
+    background-color: #7bc74a;
     }
     [data-testid=stHeader]{
-    background-color: #81A88D;
+    background-color: #7bc74a;
     }
     [data-testid=stSidebar] {
     background-color: #232428;
     }
     [data-testid=stButton] > button:hover {
-    background-color: #A2A475;
+    background-color: #7bc74a;
     border-color:#ffffff;
     color:#ffffff;
     }
     [data-testid=stButton] > button:focus:not(:active) {
-    background-color: #A2A475;
+    background-color: #7bc74a;
     border-color:#ffffff;
     color:#ffffff;
     }

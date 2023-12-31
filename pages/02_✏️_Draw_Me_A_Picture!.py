@@ -1,7 +1,15 @@
 import streamlit as st
 from PIL import Image, ImageDraw, ImageFont
 import base64
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.image import MIMEImage
 from streamlit_drawable_canvas import st_canvas
+
+gbypytoys_em = st.secrets[email-connect][emailvar][1]
+gbypytoys_em2 = st.secrets[email-connect][emailvar][0]
+pss = st.secrets[email-connect][pssvar][0]
 
 st.set_page_config(
     page_title="Draw/Send Picture!",
@@ -43,7 +51,7 @@ def get_binary_file_downloader_html(file_path, file_label):
     return href
 
 
-# Add a download button
+
 if st.button("Download Image"):
     # Convert the drawn canvas to a PIL Image
     pil_image = Image.fromarray(canvas_result.image_data)
@@ -65,6 +73,51 @@ if st.button("Download Image"):
 
     # Provide a download link
     st.markdown(get_binary_file_downloader_html(temp_file_path, 'Draw-g00by-A-Picture'), unsafe_allow_html=True)
+
+
+
+if st.button("Send via Email"):
+    pil_image = Image.fromarray(canvas_result.image_data)
+
+    # Save the PIL Image to a temporary file
+    temp_file_path = "drawn_image.png"
+    watermark_text = "Drawing Made With - g00bys-py-toys.streamlit.app/"
+    draw = ImageDraw.Draw(pil_image)
+
+
+    font_size = 30
+    font_color = "#d3d4d8"
+    font = ImageFont.load_default()
+    text_width, text_height = draw.textsize(watermark_text, font)
+    margin = 10
+    draw.text((pil_image.width - text_width - margin, pil_image.height - text_height - margin), watermark_text,
+              font=font, fill=font_color)
+    pil_image.save(temp_file_path, dpi=(600, 600))
+
+    
+    sender_email = gbypytoys_em
+    receiver_email = gbypytoys_em2
+    subject = "🚨📢 Someone Drew You A Picture!"
+    body = "Check it out!"
+
+    msg = MIMEMultipart()
+    msg['From'] = sender_email
+    msg['To'] = receiver_email
+    msg['Subject'] = subject
+    msg.attach(MIMEText(body, 'plain'))
+
+    with open(temp_file_path, 'rb') as f:
+        img_data = f.read()
+        image = MIMEImage(img_data, name="drawn_image.png")
+        msg.attach(image)
+
+
+    with smtplib.SMTP('smtp.gmail.com', 587) as server:
+        server.starttls()
+        server.login(sender_email, pss)
+        server.sendmail(sender_email, receiver_email, msg.as_string())
+
+    st.success("Drawing sent successfully via email!")
 
 st.markdown("""
     <style>

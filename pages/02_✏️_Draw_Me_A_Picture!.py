@@ -18,7 +18,7 @@ gbypytoys_em = st.secrets['emailvar']
 gbypytoys_em2 = st.secrets['emailvar2']
 pss = st.secrets['pssvar']
 
-st.title(":rainbow[Draw Settings]:")
+st.title("Draw Settings:")
 
 drawing_mode = st.selectbox("Drawing tool:", ("point", "freedraw", "line", "rect", "circle", "transform"))
 

@@ -25,7 +25,7 @@ def main():
         background-color: #7bc74a;
         }
         [data-testid=stHeader]{
-        background-color: #81A88D;
+        background-color: #7bc74a;
         }
         [data-testid=stSidebar] {
         background-color: #232428;

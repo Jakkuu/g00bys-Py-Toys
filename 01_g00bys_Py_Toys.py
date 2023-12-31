@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_extras.app_logo import add_logo
 
 st.set_page_config(
     page_title="g00bys-Py-Toys!",
@@ -7,6 +8,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+add_logo("images/gbypyfrgy.png")
 
 def main():
     st.title('Jakku Webspace In Progress!')

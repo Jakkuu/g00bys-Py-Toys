@@ -14,6 +14,8 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+add_logo("images/gbypyfrgy.png")
+
 gbypytoys_em = st.secrets['emailvar']
 gbypytoys_em2 = st.secrets['emailvar2']
 pss = st.secrets['pssvar']

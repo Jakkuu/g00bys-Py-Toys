@@ -6,6 +6,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 from streamlit_drawable_canvas import st_canvas
+from streamlit_extras.app_logo import add_logo
 
 st.set_page_config(
     page_title="Draw/Send Picture!",

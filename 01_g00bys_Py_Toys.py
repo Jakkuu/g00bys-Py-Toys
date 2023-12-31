@@ -12,7 +12,7 @@ add_logo("images/gbypyfrgy.png")
 
 def main():
     st.title('g00bys Py Toys')
-    st.write('Hello!\nI am g00by (aka Jakuu) and This is my streamlit! - More information to come!')
+    st.write('Hello!<br>I am g00by (aka Jakuu) and This is my streamlit! - More information to come!')
 
     st.markdown("""
         <style>

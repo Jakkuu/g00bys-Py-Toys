@@ -3,7 +3,7 @@ from streamlit_extras.app_logo import add_logo
 
 st.set_page_config(
     page_title="g00bys-Py-Toys!",
-    page_icon="🎢",
+    page_icon="🐸",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -11,8 +11,8 @@ st.set_page_config(
 add_logo("images/gbypyfrgy.png")
 
 def main():
-    st.title('Jakku Webspace In Progress!')
-    st.write('Not quite sure what ill be doing yet, But here is my streamlit!')
+    st.title('g00bys Py Toys')
+    st.write('Hello!\nI am g00by (aka Jakuu) and This is my streamlit! - More information to come!')
 
     st.markdown("""
         <style>

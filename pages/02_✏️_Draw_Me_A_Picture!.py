@@ -53,7 +53,7 @@ def get_binary_file_downloader_html(file_path, file_label):
     href = f'-> <a href="data:file/png;base64,{bin_str}" download="{file_label}.png">Download Image</a> <-'
     return href
 
-col1, col2 = st.columns([1,1])
+col1 = st.columns([1])
 
 with col1:
     if st.button("Download Drawing"):
@@ -78,8 +78,6 @@ with col1:
         # Provide a download link
         st.markdown(get_binary_file_downloader_html(temp_file_path, 'Draw-g00by-A-Picture'), unsafe_allow_html=True)
 
-
-with col2:
     if st.button("Send Drawing To g00by via Email"):
         pil_image = Image.fromarray(canvas_result.image_data)
     

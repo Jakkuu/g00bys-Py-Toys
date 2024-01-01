@@ -55,7 +55,7 @@ def get_binary_file_downloader_html(file_path, file_label):
 
 
 
-if st.button("Download Image"):
+if st.button("Download Drawing"):
     # Convert the drawn canvas to a PIL Image
     pil_image = Image.fromarray(canvas_result.image_data)
 
